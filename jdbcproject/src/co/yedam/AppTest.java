@@ -28,8 +28,8 @@ public class AppTest {
          Connection conn = DriverManager.getConnection(url, "jsp", "jsp");
          
          String sql1 = "select * from emp";
-         String sql2 = "insert into emp(emp_no,emp_name,emp_phone,email,salary)";
-         sql2 += "values(emp_seq.nextval,?,?,?,?)";
+         String sql2 = "insert into emp(emp_no,emp_name,emp_phone,salary)";
+         sql2 += "values(emp_seq.nextval,?,?,?)";
       
          
          PreparedStatement psmt = conn.prepareStatement(sql2);

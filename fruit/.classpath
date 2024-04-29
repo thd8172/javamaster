@@ -5,11 +5,16 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="src">
 		<attributes>
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/selfjava/ojdbc8.jar"/>
+=======
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/javac/ojdbc8.jar"/>
+>>>>>>> branch 'master' of https://github.com/thd8172/javamaster.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
