@@ -10,8 +10,24 @@ const members = [
 // 배열 for.
 //for(let mem of members) {}
 
-members.forEach(function(item, idx, ary) {
-	if (item.memPnt >= 95)
-		console.log(item, idx, ary)
-})
+//members.forEach(function(item, idx, ary) {
+//	if (item.memPnt >= 95)
+	//	console.log(item, idx, ary)
+//
+//empList: function() {
+	//fetch('../empList.json')
+	//.then(function(reselt) {
+	//	return result.json
+	//	})
+	//	.then(function(result) {
+	//	consoloe.log(result)
+	//	result.forEach(function(member) {
+	//		let tr = document.createElement('tr');
+		//	for(let prop in member){
+		//		let td_= document.createElement(td);
+	//			td.innerText =member[prop];
+	//			}
+	//		}
+//		}
+//}
 

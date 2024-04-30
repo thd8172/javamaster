@@ -82,4 +82,9 @@ document.querySelector('thead input[type="checkbox"]')//
 				console.log(this);
 				item.checked = inp.checked;
 			})
-	});
+			
+	})
+	
+	
+
+	
