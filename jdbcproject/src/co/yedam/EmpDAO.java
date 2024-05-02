@@ -15,7 +15,7 @@ public class EmpDAO {
 
    //DB 접속 후 Connection.
    private void getConn() {
-      String url = "jdbc:oracle:thin:@192.168.0.14:1521:xe";      
+      String url = "jdbc:oracle:thin:@localhost:1521:xe";      
       try {
          Class.forName("oracle.jdbc.driver.OracleDriver");
          conn = DriverManager.getConnection(url, "jsp", "jsp");
@@ -33,7 +33,7 @@ public class EmpDAO {
   
    //사원목록 기능.
    void empList() {
-      getConn();
+      getConn();	
       String sql = "select * from emp order by emp_no";
       try {
          psmt = conn.prepareStatement(sql);
@@ -60,13 +60,22 @@ public class EmpDAO {
 	   getConn();
 	  String sql =  "insert into emp(emp_number,emp_name,emp_phone,emp_email,salary,hire_date)"
 	   + "values(emp_seq.nextval,?,?,?,?,?)";
+	  String seqSql = "select emp_seq.nextval from dual";
+	  int seq = 0;
 	  try {
+			psmt = conn.prepareStatement(seqSql);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				seq = rs.getInt(1);
+			}
+			
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, emp.getEmpName());
-			psmt.setString(2, emp.getPhone());
-			psmt.setString(3, emp.getEmail());
-			psmt.setInt(4, emp.getSalary());
-			psmt.setString(5, emp.getHireDate());
+			psmt.setString(2, emp.getEmpName());
+			psmt.setString(3, emp.getPhone());
+			psmt.setString(4, emp.getEmail());
+			psmt.setInt(5, emp.getSalary());
+			psmt.setString(6, emp.getHireDate());
+			psmt.setInt(1, seq);
 			
 			
 		int r =	psmt.executeUpdate(); //처리된 건수 반환
